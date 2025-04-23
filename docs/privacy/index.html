@@ -14,6 +14,34 @@
       color: #333;
     }
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+      color: #4f46e5;
+      align-items: center;
+    }
+
+    header .icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    header a {
+      text-decoration: none;
+    }
+
     .container {
       max-width: 900px;
       margin: 60px auto;
@@ -52,6 +80,14 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="title">
+      <a href="../../index.html">
+		    <img src="../../assets/sagemoney.png" alt="Ícone" class="icon">
+		    <span>SageMoney</span>
+      </a>
+	 </div>
+  </header>
   <div class="container">
     <h1>Política de Privacidade – SageMoney</h1>
     <p class="date">Última atualização: 15 de abril de 2025</p>
