@@ -112,70 +112,107 @@ header .icone {
 	padding-top: 10px;
  }
 
- .features-transaction {
-	background-color: #f1f1f1;
-	border-radius: 20px;
-	margin-top: 80px;
- }
-
- .features h2 {
+.features h2 {
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin-left: 2rem;
 	margin-bottom: 2rem;
- }
+}
 
- .features-grid {
-	display: flex;
+.features-grid {
+	display: grid;
 	gap: 2rem;
 	max-width: 1152px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
- }
+}
 
- .features-grid div {
+.features-grid div {
 	text-align: left;
- }
+}
 
- .features-grid img {
+.features-grid img {
 	display: block;
 	margin: 0 auto 1rem;
 	max-width: 15rem;
- }
+}
  
- .descript-text {
-	 font-size: 1.15rem;
- }
- 
- .features-account {
-	background-color: #fff;
-	margin-top: 80px;
- }
-
- .features-portfolio {
+.features-transaction {
 	background-color: #f1f1f1;
 	border-radius: 20px;
 	margin-top: 80px;
- }
+}
 
- .features-portfolio img {
-	margin-top: 25px;
-	min-width: 25rem;	
-	border-radius: 15px;
- }
-
- .features-all {
-	margin-top: 80px;
- }
+.grid-transaction {
+	grid-template-columns: 1fr 2fr;
+}
  
- .card {
+.features-account {
+	background-color: #fff;
+	margin-top: 80px;
+}
+
+.grid-account {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features-portfolio {
+	background-color: #f1f1f1;
+	border-radius: 20px;
+	margin-top: 80px;
+}
+
+.grid-portfolio {
+	grid-template-columns: 2fr 1fr;
+}
+
+.features-portfolio img {	
+	border-radius: 15px;
+}
+
+.features-all {
+	margin-top: 80px;
+}
+
+.grid-all {
+	margin-top: 80px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+	.grid-transaction {
+		grid-template-columns: 1fr;
+	}
+	.grid-account {
+		grid-template-columns: 1fr;
+	}
+	.grid-portfolio {
+		grid-template-columns: 1fr;
+	}
+	.grid-all {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (min-width: 768px) {
+	.features-portfolio img {
+		margin-top: 25px;
+		min-width: 25rem;
+	}
+}
+
+.descript-text {
+	font-size: 1.15rem;
+}
+ 
+.card {
 	flex: 1;
 	border-radius: 15px;	
 	padding: 25px;
 	height: 200px;
- }
+}
  
  .card-relief {
 	background-color: #4f46e5;
@@ -198,22 +235,13 @@ header .icone {
  }
  
  .card-border i {
-  font-size: 100px;
-  color: #4f46e5;
-  vertical-align: middle;
+  	font-size: 100px;
+  	color: #4f46e5;
+  	vertical-align: middle;
  }
  
  .card-border p {
 	text-align: justify;
- }
-
- @media (min-width: 768px) {
-	.features-transaction-grid {
-	  grid-template-columns: 1fr 2fr;
-	}
-	.features-portfolio-grid {
-		grid-template-columns: 2fr 1fr;
-	  }
  }
 
  .coming-soon {
