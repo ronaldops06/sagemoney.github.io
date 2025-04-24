@@ -99,12 +99,6 @@ header .icone {
 	align-items: center;
 }
  
- .frame-img {
-	background-color: #4f46e5;
-	margin-left: 60px;
-	padding: 25px 25px 0 25px;
- }
-
  .features {
 	max-width: 1200px; 
 	margin: 0 auto;
@@ -137,6 +131,7 @@ header .icone {
 	display: block;
 	margin: 0 auto 1rem;
 	max-width: 15rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
  
 .features-transaction {
