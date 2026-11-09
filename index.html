@@ -1,160 +1,395 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App de Finanças Pessoais | SageMoney</title>
-  <meta name="description" content="Gerencie seus ativos, passivos e finanças familiares em um único app.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>SageMoney | Gestão Financeira e Evolução do Patrimônio</title>
 
-  <link rel="canonical" href="https://sagemoney.com.br/">
-  <link rel="icon" href="./assets/sagemoney.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M0LHZ3L06"></script>
-  <script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <meta
+      name="description"
+      content="Organize suas finanças pessoais e familiares, acompanhe seus ativos e passivos e tenha controle sobre a evolução da sua riqueza e do seu patrimônio."
+    />
 
-	  gtag('config', 'G-3M0LHZ3L06');
-  </script>
-</head>
-<body>
-  <header>
-    <div class="title">
-		<img src="./assets/sagemoney.png" alt="Ícone" class="icone">
-		<span>SageMoney</span>
-	 </div>
-    <button class="btn-primary" hidden>Baixar App</button>
-  </header>
+    <meta name="robots" content="index, follow" />
 
-  <section class="hero">
-    <div>
-      <h1>Pronto para uma revolução no controle financeiro pessoal?</h1>
-      <p>Se você investe, busca estabilidade e liberdade financeira a curto, médio ou longo prazo, ou simplesmente deseja manter suas finanças — e as da sua família — sob controle, esta ferramenta é para você. Com o SageMoney, você gerencia seu portfólio e acompanha as finanças familiares em um único app.</p>
-      <p hidden>
-        🚀 O SageMoney está quase pronto! Estamos na fase final de desenvolvimento, e você pode ser um dos primeiros a experimentar.
-        </br>Tem interesse em usar essa ferramenta para transformar sua vida financeira?
-        </br>Então entre agora para a nossa lista de espera — avisaremos você assim que o app estiver disponível!
-      </p>
-      <form>
-        <input type="email" placeholder="Seu e-mail" hidden/>
-        <button class="btn-primary" hidden>Entrar na lista</button>
-      </form>
-    </div>
-    <div class="icon">
-      <img src="./assets/sagemoney.jpg" alt="App SageMoney">
-    </div>
-  </section>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="SageMoney" />
+    <meta
+      property="og:title"
+      content="SageMoney | Riqueza guiada pela sabedoria"
+    />
+    <meta
+      property="og:description"
+      content="Não controle despesas: acompanhe seus ativos, passivos, finanças familiares e a evolução do seu patrimônio."
+    />
+    <meta property="og:url" content="https://sagemoney.com.br/" />
+    <meta
+      property="og:image"
+      content="https://sagemoney.com.br/images/og-sagemoney.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="SageMoney — Gestão financeira e evolução do patrimônio"
+    />
 
-  <section id="transaction" class="features features-transaction">
-    <h2>Controle de receitas, despesas e transferências</h2>
-    <div class="features-grid grid-transaction">
-      <div>
-        <div >
-          <img src="./assets/transaction.png" alt="Transações">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="SageMoney | Riqueza guiada pela sabedoria"
+    />
+    <meta
+      name="twitter:description"
+      content="Organize suas finanças, acompanhe seu patrimônio e construa seu futuro financeiro."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sagemoney.com.br/images/og-sagemoney.png"
+    />
+
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="scripts/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M0LHZ3L06"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3M0LHZ3L06');
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <nav class="nav-shell" aria-label="Navegação principal">
+        <a class="brand" href="#top" aria-label="SageMoney, início">
+          <img src="./assets/favicon.png" alt="" width="42" height="42" />
+          <span><span>Sage</span><span class="brand-accent">Money</span></span>
+        </a>
+
+        <div class="nav-links" id="primary-navigation" data-navigation>
+          <a href="#about">Sobre</a>
+          <a href="#philosophy">Filosofia</a>
+          <a href="#values">Valores</a>
+        </div>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Alternar tema"
+            title="Alternar tema"
+            data-theme-toggle
+          >
+            <span aria-hidden="true" data-theme-icon>☼</span>
+          </button>
+          <a
+            class="button button-small button-gold nav-download"
+            href="https://play.google.com/store/apps/details?id=com.sagemoney&hl=pt_BR"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Baixar o app
+          </a>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            data-menu-toggle
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow hero-glow-green"></div>
+        <div class="hero-glow hero-glow-gold"></div>
+        <div class="hero-content">
+          <img
+            class="hero-owl"
+            src="./assets/sagemoney-owl.png"
+            alt="Coruja, símbolo da SageMoney"
+            width="160"
+            height="160"
+          />
+          <p class="eyebrow hero-eyebrow">Uma visão além do óbvio</p>
+          <h1 id="hero-title">
+            Riqueza Guiada
+            <span>pela Sabedoria</span>
+          </h1>
+          <p class="hero-copy">
+            Gestão patrimonial e financeira para quem sabe que a verdadeira riqueza se constrói
+            com visão, disciplina e propósito.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-gold"
+              href="https://play.google.com/store/apps/details?id=com.sagemoney&hl=pt_BR"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Baixar na Play Store <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-outline" href="#about">Descobrir mais</a>
+          </div>
+        </div>
+        <a class="hero-scroll" href="#about" aria-label="Rolar para conhecer a SageMoney">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="content-grid container">
+          <div class="section-copy">
+            <p class="eyebrow">Sobre a SageMoney</p>
+            <h2 id="about-title">
+              Uma nova era na
+              <span>gestão patrimonial</span>
+            </h2>
+            <div class="body-copy">
+              <p>
+                O <strong>SageMoney</strong> nasceu da compreensão de que
+                investidores sofisticados precisam de mais do que as ferramentas
+                convencionais oferencem.
+              </p>
+              <p>
+                Aqui você acompanha ativos, imóveis e investimentos juntos, com uma visão completa do que construiu e do que ainda quer construir.
+              </p>
+              <p>
+                O SageMoney representa o compromisso
+                com a <strong>construção de um legado duradouro</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="about-art">
+            <div class="art-orbit"></div>
+            <img
+              src="./assets/favicon.png"
+              alt="Símbolo da coruja SageMoney"
+              width="280"
+              height="280"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section philosophy-section" id="philosophy" aria-labelledby="philosophy-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Nossa filosofia</p>
+            <h2 id="philosophy-title">
+              Princípios que guiam
+              <span>nossa excelência</span>
+            </h2>
+            <p>
+              Cada decisão é fundamentada em valores que honram a confiança de
+              quem constrói o próprio patrimônio.
+            </p>
+          </div>
+          <div class="principle-grid">
+            <article class="principle-card">
+              <span class="card-index">01</span>
+              <h3>Visão além do óbvio</h3>
+              <p>
+                Por trás de cada número pode ter uma oportunidade. Nosso trabalho é tornar essa leitura mais fácil.
+              </p>
+            </article>
+            <article class="principle-card">
+              <span class="card-index">02</span>
+              <h3>Crescimento sustentável</h3>
+              <p>
+                Riqueza verdadeira é construída com paciência, estratégia e
+                decisões fundamentadas.
+              </p>
+            </article>
+            <article class="principle-card">
+              <span class="card-index">03</span>
+              <h3>Preservação de legado</h3>
+              <p>
+                O patrimônio é a materialização das conquistas de hoje e a base
+                para o futuro.
+              </p>
+            </article>
+            <article class="principle-card">
+              <span class="card-index">04</span>
+              <h3>Excelência sem concessões</h3>
+              <p>
+                Cada detalhe importa. Tudo é pensado para quem valoriza o
+                extraordinário.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section values-section" id="values" aria-labelledby="values-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Nossos valores</p>
+            <h2 id="values-title">
+              Pilares da
+              <span>nossa essência</span>
+            </h2>
+            <p>
+              Os valores que sustentam uma experiência feita para ir além do
+              convencional.
+            </p>
+          </div>
+          <div class="values-grid">
+            <article class="value-card">
+              <span class="value-mark">S</span>
+              <h3>Sofisticação</h3>
+              <p>
+                Uma experiência refinada em cada interação, com a atenção aos
+                detalhes que você exige em todas as áreas da vida.
+              </p>
+            </article>
+            <article class="value-card">
+              <span class="value-mark">P</span>
+              <h3>Precisão</h3>
+              <p>
+                Clareza para compreender seu patrimônio e apoiar decisões com
+                mais confiança.
+              </p>
+            </article>
+            <article class="value-card">
+              <span class="value-mark">D</span>
+              <h3>Discrição</h3>
+              <p>
+                Respeito e cuidado com as informações que fazem parte da sua
+                jornada financeira.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section" aria-label="Filosofia SageMoney">
+        <div class="story-grid"></div>
+        <div class="container story-content">
+          <span class="story-mark" aria-hidden="true">S</span>
+          <blockquote>
+            “O verdadeiro investidor não busca apenas retornos.
+            <span>Busca a liberdade de escolher seu próprio destino.”</span>
+          </blockquote>
+          <p class="eyebrow">Filosofia SageMoney</p>
+        </div>
+      </section>
+
+      <section class="section audience-section" aria-labelledby="audience-title">
+        <div class="container audience-layout">
+          <div class="audience-intro">
+            <p class="eyebrow">Para quem é a SageMoney</p>
+            <h2 id="audience-title">
+              Para quem
+              <span>exige excelência</span>
+            </h2>
+            <p>
+              Uma marca para pessoas que veem o patrimônio como parte de uma
+              visão maior: empreendedores, executivos, investidores e quem está
+              construindo o próximo capítulo.
+            </p>
+            <p class="audience-note">Para quem constrói com intenção.</p>
+          </div>
+          <div class="audience-grid">
+            <article class="audience-card">
+              <span class="audience-number">01</span>
+              <h3>Empreendedores</h3>
+              <p>Para quem construiu seu caminho e agora precisa cuidar de tudo com atenção.</p>
+            </article>
+            <article class="audience-card">
+              <span class="audience-number">02</span>
+              <h3>Executivos</h3>
+              <p>Para líderes que valorizam ferramentas à altura de suas responsabilidades.</p>
+            </article>
+            <article class="audience-card">
+              <span class="audience-number">03</span>
+              <h3>Investidores</h3>
+              <p>Para quem busca precisão, perspectiva e sofisticação nas decisões.</p>
+            </article>
+            <article class="audience-card">
+              <span class="audience-number">04</span>
+              <h3>Visionários</h3>
+              <p>Para quem pensa à frente e prepara o futuro com intencionalidade.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="download-section" id="download" aria-labelledby="download-title">
+        <div class="container download-content">
+          <p class="eyebrow">SageMoney</p>
+          <h2 id="download-title">Uma nova perspectiva para o seu patrimônio.</h2>
+          <p>
+            Conheça a experiência SageMoney e acompanhe seus ativos,
+            investimentos e imóveis em um só lugar.
+          </p>
+          <a
+            class="button button-gold"
+            href="https://play.google.com/store/apps/details?id=com.sagemoney&hl=pt_BR"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Baixar na Google Play <span aria-hidden="true">↗</span>
+          </a>
+          <span class="download-note">Disponível para Android na Google Play.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="#top" aria-label="SageMoney, voltar ao início">
+            <img src="./assets/favicon.png" alt="" width="42" height="42" loading="lazy" />
+            <span><span>Sage</span><span class="brand-accent">Money</span></span>
+          </a>
+          <p>
+            Riqueza guiada pela sabedoria. Uma visão mais ampla para quem
+            constrói o próprio legado.
+          </p>
+          <a
+            class="footer-store-link"
+            href="https://play.google.com/store/apps/details?id=com.sagemoney&hl=pt_BR"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conheça o app na Google Play <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="footer-nav">
+          <h2>Explore</h2>
+          <a href="#about">Sobre</a>
+          <a href="#philosophy">Filosofia</a>
+          <a href="#values">Valores</a>
+          <a href="#download">Baixar o app</a>
+        </div>
+        <div class="footer-nav">
+          <h2>Ajuda</h2>
+          <a href="./docs/privacy/index.html">Política de Privacidade</a>
+          <a href="./docs/exclude-account/index.html">Exclusão de Conta</a>
         </div>
       </div>
-      <div>
-        <h3>Transações detalhadas</h3>
-        <p class="descript-text">No SageMoney é possível registrar e categorizar as transações com facilidade. Tudo é gerado a partir de uma transação, com elas o total de receitas, despesas e o saldo é atualizado.</p>
-        </br>
-        <p class="descript-text">Para manter os gastos mensais dentro do orçamento, é possível criar limites para categorias ou operações.</p>
-        </br>
-        <p class="descript-text">O SageMoney avisa, através de notificações e de indicadores visuais nas transações, dias antes do vencimento da despesa.</p>
-        </br>
-        <p class="descript-text">As transações recorrentes são geradas com apenas um click, sem a necessidade de cadastrar uma a uma. O mesmo acontece para as transações de parcelas.</p>
+      <div class="container footer-bottom">
+        <p>&copy; <span data-current-year></span> SageMoney. Todos os direitos reservados.</p>
+        <a href="#top">Voltar ao início ↑</a>
       </div>
-    </div>
-  </section>
-  
-  <section id="account" class="features features-account">
-    <h2>Gestão de saldos por contas</h2>
-    <div class="features-grid grid-account">
-      <div class="card card-relief">
-        <p class="descript-text">No SageMoney, você acompanha o saldo de contas correntes, poupanças, carteiras digitais, dinheiro físico, investimentos e outros tipos de contas. Organize-as em uma hierarquia personalizada para visualizar o total consolidado com clareza.</p>
-      </div>
-      <div class="card card-single">
-        <p class="descript-text">Um usuário realizou um empréstimo a um amigo e quer considerar este montante como saldo, porque por mais que o dinheiro não esteja em suas mãos, ainda pertence a ele. Nesse caso, ele cria uma conta chamada "Empréstimos a Terceiros", transfere o valor emprestado para essa conta e o SageMoney da a ele a visão exata de quanto está em empréstimo.</p>
-      </div>
-      <div class="card card-relief">
-        <p class="descript-text">Também é possível gerar categorias para as contas, permitindo assim, agrupar contas e acompanhar o andamento de cada categoria.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="features features-portfolio">
-    <h2>Portifólio</h2>
-    <div class="features-grid grid-portfolio">
-      <div>
-        <h3>Gestão de ativos e passivos</h3>
-        <p class="descript-text">Saber administrar o próprio dinheiro, investir com inteligência e compreender a diferença entre ativos e passivos são passos fundamentais rumo à liberdade financeira. A verdadeira independência começa quando o dinheiro passa a trabalhar para você — por meio da aquisição de ativos que geram renda constante, reduzindo a dependência do salário ou do trabalho ativo.</p>
-        <p class="descript-text">O SageMoney será seu aliado nessa jornada, será a ferramenta que dará o suporte necessário para acompanhar todos os seus ativos e passivos, identificando quais ativos estão gerando retorno e mantendo seus passivos sob controle.</p>
-      </br>
-        <p class="descript-text">“Ativo é tudo aquilo que coloca dinheiro no seu bolso. Passivo é tudo aquilo que tira dinheiro do seu bolso.”</p>
-        <p>— Robert Kiyosaki, <em>Pai Rico, Pai Pobre</em></p>        
-      </div>
-      <div>
-        <img src="./assets/portfolio.jpg" alt="Portfólio">
-      </div>
-    </div>
-  </section>
-  
-  <section id="all" class="features features-all">
-    <h2>O que mais o SageMoney oferece</h2>
-    <div class="features-grid grid-all">
-      <div class="card-border">
-		  <i class="material-icons">family_restroom</i>
-        <p class="descript-text">O recurso da Família permite que os membros gerenciem uma parte ou toda finança do lar de forma conjunta, administrada por um ou mais membros.</p>
-      </div>
-      <div class="card-border">
-		  <i class="material-icons">dashboard</i>
-        <p class="descript-text">Para acompanhar sua evolução financeira — incluindo rendimentos, dividendos, lucros, saldos e outros indicadores — o SageMoney oferece gráficos personalizados que colocam você no controle das suas finanças.</p>
-      </div>
-      <div class="card-border">
-		  <i class="material-icons">savings</i>
-        <p class="descript-text">Com o SageMoney, você define sua reserva de emergência ou deixa que o app calcule automaticamente com base nos seus gastos recentes. E mais: sempre que seu saldo líquido estiver abaixo do ideal, o sistema alerta você.</p>
-      </div>
-		<div class="card-border">
-		  <i class="material-icons">flag</i>
-        <p class="descript-text">Definir objetivos de receita e estabelecer um teto de gastos é essencial para manter seu orçamento sob controle — o SageMoney oferece essa funcionalidade de forma prática, contribuindo diretamente para sua saúde financeira.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="coming-soon">
-    <p class="descript-text">Instale nosso aplicativo na Play Store e aproveite todos os recursos</p>
-	  <a href="https://play.google.com/store/apps/details?id=com.sagemoney&hl=pt_BR">
-    	 <img src="https://www.itau.com.br/media/dam/m/4e113c9365e00e2e/webimage-google_play_footer_cmsless.png" alt="Prévia app store" />
-	  </a>	  
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h3>SageMoney</h3>
-        <p class="text-sm">© 2026 SageMoney. Todos os direitos reservados.</p>
-      </div>
-      <div>
-        <h4>Produto</h4>
-        <ul>
-          <li><a href="#transaction">Transações</a></li>
-          <li><a href="#account">Controle de Contas</a></li>
-          <li><a href="#portfolio">Gestão de Portifólio</a></li>
-          <li><a href="#all">Demais Funcionalidades</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Ajuda</h4>
-        <ul>
-          <li><a href="./docs/privacy/index.html">Política de Privacidade</a></li>
-          <li><a href="./docs/exclude-account/index.html">Exclusão de Conta</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
-
-
