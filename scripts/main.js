@@ -4,6 +4,7 @@ const navigation = document.querySelector("[data-navigation]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeIcon = document.querySelector("[data-theme-icon]");
 const waitlistForm = document.querySelector("#waitlist-form");
+const waitlistApiUrl = "https://waitlist-9fip.onrender.com/notify";
 const root = document.documentElement;
 
 const closeMenu = () => {
@@ -91,7 +92,7 @@ waitlistForm?.addEventListener("submit", async (event) => {
   submitButton.textContent = "Enviando...";
 
   try {
-    const response = await fetch("https://waitlist-9fip.onrender.com/notify", {
+    const response = await fetch(waitlistApiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
