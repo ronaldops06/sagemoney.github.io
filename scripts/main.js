@@ -71,7 +71,7 @@ document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
-aitlistForm?.addEventListener("submit", async (event) => {
+waitlistForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const status = document.querySelector("[data-waitlist-status]");
