@@ -709,6 +709,113 @@ img {
   font-size: 12px;
 }
 
+.waitlist-panel {
+  max-width: 900px;
+  margin: 58px auto 0;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(224, 191, 100, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  text-align: left;
+}
+
+.waitlist-heading {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.waitlist-heading .eyebrow {
+  margin-bottom: 11px;
+}
+
+.waitlist-heading h3 {
+  margin: 0;
+  color: #f5f1e8;
+  font-family: var(--serif);
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.waitlist-heading > p:last-child {
+  margin: 12px 0 0;
+  color: #b9c0cc;
+  font-size: 14px;
+}
+
+.waitlist-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.waitlist-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #e8e8e5;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.waitlist-field input,
+.waitlist-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 5px;
+  background: #0b1220;
+  color: #f5f1e8;
+  font: inherit;
+  font-size: 14px;
+}
+
+.waitlist-field input::placeholder {
+  color: #828b99;
+}
+
+.waitlist-field input:focus,
+.waitlist-field select:focus {
+  border-color: var(--gold-light);
+  outline: 2px solid rgba(224, 191, 100, 0.22);
+  outline-offset: 1px;
+}
+
+.waitlist-submit {
+  min-height: 48px;
+  padding-inline: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.waitlist-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.waitlist-privacy {
+  margin: 15px 0 0;
+  color: rgba(230, 232, 236, 0.56);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.waitlist-status {
+  min-height: 22px;
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.waitlist-status[data-state="success"] {
+  color: #80d5ad;
+}
+
+.waitlist-status[data-state="error"] {
+  color: #ffaaa2;
+}
+
 .site-footer {
   padding: 64px 0 24px;
   background: #090e18;
@@ -984,6 +1091,21 @@ img {
 
   .download-section .download-content > p:not(.eyebrow) {
     font-size: 15px;
+  }
+
+    .waitlist-panel {
+    margin-top: 44px;
+    padding: 24px 18px;
+  }
+
+  .waitlist-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .waitlist-submit {
+    width: 100%;
+    white-space: normal;
   }
 
   .footer-main {

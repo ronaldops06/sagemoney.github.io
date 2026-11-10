@@ -3,6 +3,7 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const navigation = document.querySelector("[data-navigation]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeIcon = document.querySelector("[data-theme-icon]");
+const waitlistForm = document.querySelector("#waitlist-form");
 const root = document.documentElement;
 
 const closeMenu = () => {
@@ -68,4 +69,58 @@ window.addEventListener("scroll", updateHeader, { passive: true });
 
 document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
+});
+
+aitlistForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const status = document.querySelector("[data-waitlist-status]");
+  const submitButton = waitlistForm.querySelector('button[type="submit"]');
+  const formData = new FormData(waitlistForm);
+  const previousLabel = submitButton.textContent;
+  const payload = {
+    email: formData.get("email"),
+    platform: formData.get("platform"),
+  };
+
+  if (status) {
+    status.textContent = "";
+    status.dataset.state = "";
+  }
+  submitButton.disabled = true;
+  submitButton.textContent = "Enviando...";
+
+  try {
+    const response = await fetch("https://waitlist-9fip.onrender.com/notify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      if (status) {
+        status.textContent =
+          result.message || "Não foi possível concluir o cadastro.";
+        status.dataset.state = "error";
+      }
+      return;
+    }
+
+    waitlistForm.reset();
+    if (status) {
+      status.textContent =
+        "Cadastro confirmado. Avisaremos você quando essa plataforma estiver disponível.";
+      status.dataset.state = "success";
+    }
+  } catch {
+    if (status) {
+      status.textContent =
+        "Não foi possível enviar agora. Tente novamente em instantes.";
+      status.dataset.state = "error";
+    }
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = previousLabel;
+  }
 });

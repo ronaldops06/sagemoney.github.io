@@ -81,6 +81,7 @@
           <a href="#about">Sobre</a>
           <a href="#philosophy">Filosofia</a>
           <a href="#values">Valores</a>
+          <a href="#waitlist">Lista de espera</a>
         </div>
 
         <div class="nav-actions">
@@ -348,7 +349,48 @@
           >
             Baixar na Google Play <span aria-hidden="true">↗</span>
           </a>
-          <span class="download-note">Disponível para Android na Google Play.</span>
+          <span class="download-note">Em breve também na App Store e na Web.</span>
+
+          <div class="waitlist-panel" id="waitlist">
+            <div class="waitlist-heading">
+              <p class="eyebrow">Próximas plataformas</p>
+              <h3>Quer usar o SageMoney no iOS ou na Web?</h3>
+              <p>
+                Cadastre seu e-mail e avisaremos quando a plataforma escolhida
+                estiver disponível.
+              </p>
+            </div>
+
+            <form class="waitlist-form" id="waitlist-form">
+              <div class="waitlist-field">
+                <label for="waitlist-email">E-mail</label>
+                <input
+                  id="waitlist-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  placeholder="voce@exemplo.com"
+                  required
+                />
+              </div>
+              <div class="waitlist-field">
+                <label for="waitlist-platform">Plataforma</label>
+                <select id="waitlist-platform" name="platform" required>
+                  <option value="" selected disabled>Selecione</option>
+                  <option value="iOS">iOS</option>
+                  <option value="Web">Web</option>
+                </select>
+              </div>
+              <button class="button button-gold waitlist-submit" type="submit">
+                Entrar na lista
+              </button>
+            </form>
+            <p class="waitlist-privacy">
+              Usaremos seu e-mail apenas para avisar sobre a plataforma escolhida.
+            </p>
+            <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
+          </div>
         </div>
       </section>
     </main>
@@ -379,6 +421,7 @@
           <a href="#philosophy">Filosofia</a>
           <a href="#values">Valores</a>
           <a href="#download">Baixar o app</a>
+          <a href="#waitlist">Lista de espera</a>
         </div>
         <div class="footer-nav">
           <h2>Ajuda</h2>
