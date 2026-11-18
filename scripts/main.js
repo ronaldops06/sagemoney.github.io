@@ -4,6 +4,8 @@ const navigation = document.querySelector("[data-navigation]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeIcon = document.querySelector("[data-theme-icon]");
 const waitlistForm = document.querySelector("#waitlist-form");
+const waitlistFeatures = document.querySelector("#waitlist-features");
+const featuresCount = document.querySelector("[data-features-count]");
 const waitlistApiUrl = "https://waitlist-9fip.onrender.com/notify";
 const root = document.documentElement;
 
@@ -72,6 +74,12 @@ document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
+waitlistFeatures?.addEventListener("input", () => {
+  if (featuresCount) {
+    featuresCount.textContent = String(waitlistFeatures.value.length);
+  }
+});
+
 waitlistForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -82,6 +90,7 @@ waitlistForm?.addEventListener("submit", async (event) => {
   const payload = {
     email: formData.get("email"),
     platform: formData.get("platform"),
+    features: String(formData.get("features") || "").trim(),
   };
 
   if (status) {

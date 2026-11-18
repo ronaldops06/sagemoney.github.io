@@ -760,7 +760,8 @@ img {
 }
 
 .waitlist-field input,
-.waitlist-field select {
+.waitlist-field select,
+.waitlist-field textarea {
   width: 100%;
   min-height: 48px;
   padding: 0 13px;
@@ -772,15 +773,36 @@ img {
   font-size: 14px;
 }
 
-.waitlist-field input::placeholder {
+.waitlist-field textarea {
+  min-height: 104px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+
+.waitlist-field-wide {
+  grid-column: 1 / -1;
+}
+
+.waitlist-field input::placeholder,
+.waitlist-field textarea::placeholder {
   color: #828b99;
 }
 
 .waitlist-field input:focus,
-.waitlist-field select:focus {
+.waitlist-field select:focus,
+.waitlist-field textarea:focus {
   border-color: var(--gold-light);
   outline: 2px solid rgba(224, 191, 100, 0.22);
   outline-offset: 1px;
+}
+
+.waitlist-textarea-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+  color: rgba(230, 232, 236, 0.56);
+  font-size: 12px;
 }
 
 .waitlist-submit {
@@ -1093,7 +1115,7 @@ img {
     font-size: 15px;
   }
 
-    .waitlist-panel {
+  .waitlist-panel {
     margin-top: 44px;
     padding: 24px 18px;
   }
